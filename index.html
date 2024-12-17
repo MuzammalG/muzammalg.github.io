@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muzammal Hussain</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: background-color 1s ease, background-image 2s ease;
+        }
+
+        h1 {
+            color: white;
+            font-size: 4em;
+            font-weight: bold;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Muzammal Hussain</h1>
+    </div>
+
+    <script>
+        // Array of Google image URLs (you can update these URLs to any image URLs you prefer)
+        const images = [
+            "https://images.unsplash.com/photo-1521747116042-5e37c6d4b41b",  // Example image 1
+            "https://images.unsplash.com/photo-1593642532973-d31b6557fa68",  // Example image 2
+            "https://images.unsplash.com/photo-1506748686215-bb31f1312e40",  // Example image 3
+            "https://images.unsplash.com/photo-1475089237827-bd2c5c5a3d90"   // Example image 4
+        ];
+
+        let currentImageIndex = 0;
+
+        function changeBackground() {
+            // Set gradient background
+            document.body.style.background = `linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${images[currentImageIndex]})`;
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundPosition = "center";
+
+            // Move to the next image in the array
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+        }
+
+        // Change the background every 5 seconds
+        setInterval(changeBackground, 5000);
+
+        // Initialize the first background
+        changeBackground();
+    </script>
+</body>
+</html>
